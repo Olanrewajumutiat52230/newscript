@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Document</title>
+  <link rel="stylesheet" href="quiz.css" />
+  <style>
+   
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Quiz Page</h1>
+    <b>Instruction: Answer the questions correctly</b>
+
+    <p id="q1">1. Which of these planet is closest to sun?</p>
+    <input type="radio" id="opt1" class="radio" name="planet">
+    <label for="opt1" class="label">Mercury</label>
+    <input type="radio" id="opt2" class="radio" name="planet">
+    <label for="opt2" class="label">Venus</label>
+    <input type="radio" id="opt3" class="radio" name="planet">
+    <label for="opt3" class="label">Jupiter</label>
+    <input type="radio" id="opt4" class="radio" name="planet">
+    <label for="opt4" class="label">Sun</label>
+
+    <p id="q2">2. One of these words is a Verb</p>
+    <input type="radio" id="opt2-1" class="radio" name="Verb">
+    <label for="opt2-1" class="label">Canada</label>
+    <input type="radio" id="opt2-2" class="radio" name="Verb">
+    <label for="opt2-2" class="label">Dancing</label>
+    <input type="radio" id="opt2-3" class="radio" name="Verb">
+    <label for="opt2-3" class="label">Aminah</label>
+    <input type="radio" id="opt2-4" class="radio" name="Verb">
+    <label for="opt2-4" class="label">Goat</label>
+
+    <p id="q3">3. Plastics are made from?</p>
+    <input type="radio" id="opt3-1" class="radio" name="plastics">
+    <label for="opt3-1" class="label">Plant</label>
+    <input type="radio" id="opt3-2" class="radio" name="plastics">
+    <label for="opt3-2" class="label">Crude Oil</label>
+    <input type="radio" id="opt3-3" class="radio" name="plastics">
+    <label for="opt3-3" class="label">Sand</label>
+    <input type="radio" id="opt3-4" class="radio" name="plastics">
+    <label for="opt3-4" class="label">Cement</label>
+
+    <p id="q4">4. Water is __________ in color</p>
+    <input type="radio" id="opt4-1" class="radio" name="color">
+    <label for="opt4-1" class="label">Whitish</label>
+    <input type="radio" id="opt4-2" class="radio" name="color">
+    <label for="opt4-2" class="label">Brownish</label>
+    <input type="radio" id="opt4-3" class="radio" name="color">
+    <label for="opt4-3" class="label">Odorless</label>
+    <input type="radio" id="opt4-4" class="radio" name="color">
+    <label for="opt4-4" class="label">Colorless</label>
+
+    <p id="q5">5. Which of these animals has the highest weight?</p>
+    <input type="radio" id="opt5-1" class="radio" name="animal">
+    <label for="opt5-1" class="label">Hippo</label>
+    <input type="radio" id="opt5-2" class="radio" name="animal">
+    <label for="opt5-2" class="label">Crocodile</label>
+    <input type="radio" id="opt5-3" class="radio" name="animal">
+    <label for="opt5-3" class="label">Blue Whale</label>
+    <input type="radio" id="opt5-4" class="radio" name="animal">
+    <label for="opt5-4" class="label">Elephant</label>
+
+    <p id="show"></p>
+    <button onclick="checkAnswers()">Submit</button>
+  </div>
+
+  <script>
+    // to get a particular answer with an id
+    function checkAnswers() {
+      let score = 0;
+      if (document.getElementById("opt1").checked) score++;
+      if (document.getElementById("opt2-2").checked) score++;
+      if (document.getElementById("opt3-2").checked) score++;
+      if (document.getElementById("opt4-4").checked) score++;
+      if (document.getElementById("opt5-3").checked) score++;
+
+  window.alert("Your score is: " + score + "/5") ;
+    }
+  //  querySelector is used to retrieve an elements from css
+    const body = document.querySelector('body');
+
+    const ImageUrls = [
+      './51oSTYWIjsL._AC_UF1000,1000_QL80_.jpg',
+      './istockphoto-1514382818-612x612.webp',
+      './istockphoto-182493016-612x612.jpg',
+      './istockphoto-489490886-612x612.webp',
+      './1000_F_812980723_Zmrv92B2ckP8YqUGpyoCwXEnNhosHIIC.jpg'
+    ];
+// to call a function
+    function Background() {
+      const index = Math.floor(Math.random() * ImageUrls.length);
+      body.style.backgroundImage = `url('${ImageUrls[index]}')`;
+    }
+  // time to Set one image  on initial loading of the background
+    setInterval(Background, 3000);
+    Background(); 
+
+  </script>
+ </html>
